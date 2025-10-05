@@ -6,9 +6,9 @@
     <title>Информация</title>
     <style>
         body {
-            background-color: #000; /* черный фон */
-            color: #fff; /* белый текст */
-            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -18,29 +18,68 @@
             text-align: center;
         }
 
-        a {
-            color: #1DA1F2; /* синий цвет ссылок */
-            text-decoration: none;
-            font-weight: bold;
-            margin: 5px;
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.7);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: #fff;
         }
 
         .info {
             margin: 10px 0;
             font-size: 18px;
         }
+
+        a {
+            color: #1DA1F2;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 8px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #1DA1F2;
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+        }
+
+        a:hover {
+            color: #0d8ddb;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
-    <div class="info">Поддержка:</div>
-    <div class="info">
-        <a href="https://t.me/cyn_elliot" target="_blank">@cyn_elliot</a> | 
-        <a href="https://t.me/bacctor" target="_blank">@bacctor</a>
+    <div class="container">
+        <h1>Поддержка</h1>
+        <div class="info">
+            <a href="https://t.me/cyn_elliot" target="_blank">@cyn_elliot</a> | 
+            <a href="https://t.me/bacctor" target="_blank">@bacctor</a>
+        </div>
+        <div class="info">Организатор — @cyn_elliot, разработчик бота — @bacctor</div>
     </div>
-    <div class="info">Организатор — @cyn_elliot, разработчик бота — @bacctor</div>
 </body>
 </html>
